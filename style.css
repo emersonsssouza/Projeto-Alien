@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle, #181818, #000);
+    background-image: radial-gradient(circle, #2a2a2a, #000);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.alien {
+    position: relative;
+    background-color: #252525;
+    width: 300px;
+    height: 300px;
+    transform: rotate(45deg);
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.alien::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #0b0b0b;
+    border-top-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    top: 200px;
+    left: 100px;
+    transform: rotate(45deg);
+}
+
+.alien::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #0b0b0b;
+    border-top-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    top: 100px;
+    left: 200px;
+    transform: rotate(-45deg);
+}
+
+.alien:hover {
+    background-image: radial-gradient(circle, #a2f593, #58f03e);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5),
+        0 0 20px 20px rgb(88, 240, 62, 0.4);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .alien {
+        width: 200px;
+        height: 200px;
+    }
+
+    .alien::before {
+        width: 40px;
+        height: 40px;
+        top: 150px;
+        left: 100px;
+    }
+
+    .alien::after {
+        width: 40px;
+        height: 40px;
+        top: 100px;
+        left: 150px;
+    }
+}
